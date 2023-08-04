@@ -14,9 +14,15 @@
   alert("Registration failed");
 </script>
 {% endifequal %}
+<style>
+  .reg{
+    color:  #4CAF50;
+    size: 20px;
+  }
+</style>
 
 <div class="container" style="margin-top: 50px">
-  <h2 class="text-content">E-care Registration</h2>
+  <h2  class="reg">E-care Registration</h2>
   <br /><br />
   <form method="post">
     {% csrf_token %}

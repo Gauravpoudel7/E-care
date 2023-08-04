@@ -14,19 +14,108 @@
   alert("Login failed");
 </script>
 {% endifequal %}
+   <style>
+    /* Add your custom CSS styles here */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+    .card {
+      flex: 1 0 300px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 10px;
+    }
+    .card h2 {
+      color: #4CAF50;
+      margin-bottom: 10px;
+    }
+    .card p {
+      color: #555;
+    }
 
-<div class="container" style="margin-top: 50px">
-  <h2 class="text-content">E-care Login</h2>
-  <br /><br />
-  <form method="post">
-    {% csrf_token %}
-    <label>User Name</label>
-    <input type="text" class="form-control" name="uname" />
-    <label>Password</label>
-    <input type="password" class="form-control" name="pwd" />
-    <br />
-    <input type="submit" value="Login" class="form-control btn-primary" />
-  </form>
-</div>
+    .login-container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .login-container h2 {
+      color: #4CAF50;
+      margin-bottom: 20px;
+    }
+    .login-container label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .login-container input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .login-container input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+
+  <div class="container">
+    <div class="card">
+      <h2>Patient Management</h2>
+      <p>Access and manage patient records, appointments, and medical histories in real-time.</p>
+    </div>
+    <div class="card">
+      <h2>Staff Management</h2>
+      <p>Assign roles, track schedules, and monitor staff performance effortlessly.</p>
+    </div>
+    <div class="card">
+      <h2>Inventory Control</h2>
+      <p>Keep track of medical supplies, equipment, and medicines to ensure availability when needed.</p>
+    </div>
+    <div class="card">
+      <h2>Financial Management</h2>
+      <p>Streamline billing, insurance claims, and payment processes to maintain a healthy financial ecosystem.</p>
+    </div>
+    <div class="card">
+      <h2>Reporting and Analytics</h2>
+      <p>Generate insightful reports and analytics to make data-driven decisions for hospital improvement.</p>
+    </div>
+    <div class="card">
+      <h2>Security and Compliance</h2>
+      <p>Ensure patient data security and comply with healthcare regulations.</p>
+    </div>
+  </div>
+
+  <div class="login-container">
+    <h2>E-care Login</h2>
+
+    <form method="post">
+      {% csrf_token %}
+      <label>User Name</label>
+      <input type="text" name="uname" required>
+      <label>Password</label>
+      <input type="password" name="pwd" required>
+      <br>
+      <br>
+      <input type="submit" value="Login">
+    </form>
+  </div>
 
 {% endblock %}
