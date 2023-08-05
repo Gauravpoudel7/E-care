@@ -16,6 +16,26 @@
 {% endifequal %}
    <style>
     /* Add your custom CSS styles here */
+
+  .logo-container {
+    display: flex;
+    padding-left: 50px;
+    align-items: center;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif; /* Use a suitable font */
+    font-size: 40px; /* Adjust the font size as needed */
+    color: #4CAF50; /* Set the color for the logo */
+  }
+
+  .logo-letter {
+    padding: 5px;
+    border: 2px solid #4CAF50; /* Set the border color for the letter */
+    border-radius: 50%; /* Make the letter circular */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-right: 10px;
+  }
+
+
     .container {
       display: flex;
       flex-wrap: wrap;
@@ -74,7 +94,18 @@
     .login-container input[type="submit"]:hover {
       background-color: #45a049;
     }
+            footer {
+            text-align: center;
+            margin-top: 30px;
+        }
   </style>
+  <br>
+
+
+  <div class="logo-container">
+  <div class="logo-letter">E</div>
+  <h1>E-care </h1>
+</div>
 
   <div class="container">
     <div class="card">
@@ -117,5 +148,9 @@
       <input type="submit" value="Login">
     </form>
   </div>
+
+          <footer>
+            <p>&copy; 2023 E-care. All rights reserved.</p>
+        </footer>
 
 {% endblock %}

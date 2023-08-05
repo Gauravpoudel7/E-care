@@ -10,6 +10,7 @@
     <style>
         /* Add your custom CSS styles here */
         body {
+            
             font-family: Arial, sans-serif;
             line-height: 1.6;
             max-width: 100%;
@@ -17,9 +18,13 @@
             padding: 0px;
             border-radius: 3px;
         }
+        .container {
+            font-size: x-large;
+            text-align: left;
+        }
         .first {
             margin: 5px;
-            padding:5px;
+            padding: 5px;
         }
         h1 {
             color: #4CAF50;
@@ -55,15 +60,7 @@
             color: #4CAF50;
             margin-bottom: 15px;
         }
-        .contact {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        .contact h2 {
-            color: #4CAF50;
-            margin-bottom: 15px;
-        }
+
         footer {
             text-align: center;
             margin-top: 30px;
@@ -71,46 +68,50 @@
     </style>
 </head>
 <body>
+    <div class="container">
+        <br>
+        <h1 class="first">About E-care: Admin Hospital Management System</h1>
+        <p class="first">Welcome to E-care, the cutting-edge Hospital Management System designed to streamline administrative tasks and enhance overall efficiency in healthcare institutions.</p>
+        <br>
+        <br>
+        <div class="mission">
+            <h2>Our Mission</h2>
+            <p>At E-care, our mission is to provide a comprehensive, user-friendly, and secure hospital management system that empowers healthcare administrators to manage their facilities with ease. We strive to improve patient care, optimize resource allocation, and reduce operational complexities in hospitals and medical centers.</p>
+        </div>
+         <br>
+         <br>
+        <div class="features">
+            <h2>Key Features</h2>
+            <p>E-care is equipped with a wide range of features that cater specifically to the needs of hospital administrators:</p>
+            <ul>
+                <li>Real-time Patient Management: Access and manage patient records, appointments, and medical histories in real-time.</li>
+                <li>Efficient Staff Management: Assign roles, track schedules, and monitor staff performance effortlessly.</li>
+                <li>Inventory Control: Keep track of medical supplies, equipment, and medicines to ensure availability when needed.</li>
+                <li>Financial Management: Streamline billing, insurance claims, and payment processes to maintain a healthy financial ecosystem.</li>
+                <li>Reporting and Analytics: Generate insightful reports and analytics to make data-driven decisions for hospital improvement.</li>
+                <li>Security and Compliance: Ensure patient data security and comply with healthcare regulations.</li>
+            </ul>
+        </div>
     <br>
-    
-    <h1 class="first">About E-care: Admin Hospital Management System</h1>
-    <p class="first">Welcome to E-care, the cutting-edge Hospital Management System designed to streamline administrative tasks and enhance overall efficiency in healthcare institutions.</p>
     <br>
-    <div class="mission">
-        <h2>Our Mission</h2>
-        <p>At E-care, our mission is to provide a comprehensive, user-friendly, and secure hospital management system that empowers healthcare administrators to manage their facilities with ease. We strive to improve patient care, optimize resource allocation, and reduce operational complexities in hospitals and medical centers.</p>
+        <div class="reasons">
+            <h2>Why Choose E-care?</h2>
+            <p>There are several reasons why E-care stands out as the preferred choice for hospital administrators:</p>
+            <ul>
+                <li>Intuitive User Interface: Our system boasts a user-friendly interface, making it easy for your staff to adapt and utilize efficiently.</li>
+                <li>Scalability: Whether you manage a small clinic or a large multi-specialty hospital, E-care can scale to accommodate your needs.</li>
+                <li>Reliability: With robust technology and continuous updates, you can rely on E-care to function flawlessly round-the-clock.</li>
+                <li>Customer Support: Our dedicated support team is always available to assist you with any queries or concerns.</li>
+                <li>Cost-Effective: E-care offers cost-effective solutions to optimize your hospital's operational expenses.</li>
+            </ul>
+        </div>
+    <br>
+    <br>
+        <footer>
+            <p>&copy; 2023 E-care. All rights reserved.</p>
+        </footer>
     </div>
-     <br>
-    <div class="features">
-        <h2>Key Features</h2>
-        <p>E-care is equipped with a wide range of features that cater specifically to the needs of hospital administrators:</p>
-        <ul>
-            <li>Real-time Patient Management: Access and manage patient records, appointments, and medical histories in real-time.</li>
-            <li>Efficient Staff Management: Assign roles, track schedules, and monitor staff performance effortlessly.</li>
-            <li>Inventory Control: Keep track of medical supplies, equipment, and medicines to ensure availability when needed.</li>
-            <li>Financial Management: Streamline billing, insurance claims, and payment processes to maintain a healthy financial ecosystem.</li>
-            <li>Reporting and Analytics: Generate insightful reports and analytics to make data-driven decisions for hospital improvement.</li>
-            <li>Security and Compliance: Ensure patient data security and comply with healthcare regulations.</li>
-        </ul>
-    </div>
-<br>
-    <div class="reasons">
-        <h2>Why Choose E-care?</h2>
-        <p>There are several reasons why E-care stands out as the preferred choice for hospital administrators:</p>
-        <ul>
-            <li>Intuitive User Interface: Our system boasts a user-friendly interface, making it easy for your staff to adapt and utilize efficiently.</li>
-            <li>Scalability: Whether you manage a small clinic or a large multi-specialty hospital, E-care can scale to accommodate your needs.</li>
-            <li>Reliability: With robust technology and continuous updates, you can rely on E-care to function flawlessly round-the-clock.</li>
-            <li>Customer Support: Our dedicated support team is always available to assist you with any queries or concerns.</li>
-            <li>Cost-Effective: E-care offers cost-effective solutions to optimize your hospital's operational expenses.</li>
-        </ul>
-    </div>
-<br>
-<br>
-    <footer>
-        <h1>&copy; 2023 E-care. All rights reserved.</h1>
-    </footer>
 </body>
-</html>
+</html
 
 {% endblock %}

@@ -4,11 +4,25 @@ from django.contrib.auth import authenticate, logout,login
 from .models import *
 # Create your views here.
 
+
+
+
 def About(request):
     return render(request,'about.html')
 
+
 def Contact(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        message = request.POST['message']
+
+        
+        contactuser=contact.objects.create(name=name,email=email,message=message)
+        contactuser.save()
+
     return render(request,'contact.html')
+
 
 def Index(request):
     if not request.user.is_staff:
@@ -30,6 +44,9 @@ def Index(request):
     d1 = {'d':d,'p':p,'a':a} 
     return render(request,'index.html',d1)
 
+
+
+
 def Login(request):
     error=""
     if request.method=='POST':
@@ -50,11 +67,17 @@ def Login(request):
     d = {'error':error}
     return render(request,'login.html',d)
 
+
+
+
 def Logout_admin(request):
     if not request.user.is_staff:
         return redirect('login')
     logout(request)
     return redirect('login')
+
+
+
 
 def View_doctor(request):
     if not request.user.is_staff:
@@ -62,6 +85,9 @@ def View_doctor(request):
     doc = Doctor.objects.all()
     d = {'doc':doc}
     return render(request,'view_doctor.html',d)
+
+
+
 
 def Add_doctor(request):
     error=""
@@ -81,6 +107,9 @@ def Add_doctor(request):
     d = {'error':error}
     return render(request,'add_doctor.html',d)
 
+
+
+
 def Delete_Doctor(request,pid ):
     if not request.user.is_staff:
         return redirect('login')
@@ -89,12 +118,17 @@ def Delete_Doctor(request,pid ):
     return redirect('view_doctor')
 
 
+
+
 def View_Patient(request):
     if not request.user.is_staff:
         return redirect('login')
     doc = Patient.objects.all()
     d = {'doc':doc}
     return render(request,'view_patient.html',d)
+
+
+
 
 def Add_Patient(request):
     error=""
@@ -116,6 +150,8 @@ def Add_Patient(request):
     return render(request,'add_patient.html',d)
 
 
+
+
 def Delete_Patient(request,pid ):
     if not request.user.is_staff:
         return redirect('login')
@@ -124,12 +160,17 @@ def Delete_Patient(request,pid ):
     return redirect('view_patient')
 
 
+
+
 def View_Appointment(request):
     if not request.user.is_staff:
         return redirect('login')
     appoint = Appointment.objects.all()
     d = {'appoint':appoint}
     return render(request,'view_appointment.html',d)
+
+
+
 
 def Add_Appointment(request):
     error=""
@@ -153,6 +194,8 @@ def Add_Appointment(request):
     return render(request,'add_appointment.html',d)
 
 
+
+
 def Delete_Appointment(request,pid ):
     if not request.user.is_staff:
         return redirect('login')
@@ -161,6 +204,8 @@ def Delete_Appointment(request,pid ):
     return redirect('view_appointment')
 
 
+
+# code for registration of authorized user to record 
 def register(request):
     error = ""
     if request.method == 'POST':
@@ -178,6 +223,9 @@ def register(request):
                 
             elif User.objects.filter(username=username).exists():
                 error = 'yes'
+            
+            elif User.objects.filter(email=email).exists():
+                error = 'yes'
                 
             else:
                 myuser = User.objects.create_superuser(username , email , password,)
@@ -192,4 +240,4 @@ def register(request):
         except:
            error = "yes"
     d = {'error':error}
-    return render(request,'register.html',d)
+    return render(request,'register.html',d) 

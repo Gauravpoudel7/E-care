@@ -29,3 +29,8 @@ class Appointment(models.Model):
     def __str__(self):
         return self.doctor.First_name+" "+self.doctor.Last_name+"--"+self.patient.First_name+" "+self.patient.Last_name
     
+class contact(models.Model):
+    name = models.CharField(max_length=50)
+    email= models.CharField(max_length=80)
+    message = models.CharField(max_length=1000)
+    
