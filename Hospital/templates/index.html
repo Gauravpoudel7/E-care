@@ -1,9 +1,83 @@
 {% extends 'navigationbar.html' %}
 {% load static %}
 {% block body %}
+<style>
+    
+      .logo-letter {
+ 
+    transition: transform 1s ease-in-out;
+  }
 
+  .logo-letter:hover {
+    transform: rotate(360deg);
+  }
+
+  .logo-container {
+    display: flex;
+    padding-top: 20px;
+    padding-left: 60px;
+    padding-right: 30px;
+    align-items: center;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif; 
+    font-size: 100px; 
+    color: #4CAF50; 
+  }
+
+  .logo-letter {
+    padding: 5px;
+    border: 2px solid #4CAF50; 
+    border-radius: 50%; /* Make the letter circular */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-right: 10px;
+  }
+    .container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.mydivstyle {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s;
+}
+
+.mydivstyle:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.text-center {
+    text-align: center;
+}
+</style>
+<script>
+  const logoLetter = document.querySelector('.logo-letter');
+
+  logoLetter.addEventListener('mouseover', () => {
+    logoLetter.style.transform = 'rotate(360deg)';
+    logoLetter.style.transition = 'transform 1s ease-in-out';
+  });
+
+  logoLetter.addEventListener('mouseout', () => {
+    logoLetter.style.transform = 'rotate(0deg)';
+    logoLetter.style.transition = 'transform 1s ease-in-out';
+  });
+</script>
+  <div class="logo-container">
+  <div class="logo-letter">E</div>
+  <h1>E-care </h1>
+</div>
 <div class="container" style="margin-top:50px">
-<h2 class="text-center">E-care Dashboard</h2>
+
 <br><br><br><br>
 <div class="row">
     <div class="col-sm-4 text-center mydivstyle">

@@ -241,3 +241,4 @@ def register(request):
            error = "yes"
     d = {'error':error}
     return render(request,'register.html',d) 
+
